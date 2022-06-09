@@ -4,7 +4,9 @@ from InquirerPy import \
 
 # msg debe ser un string y retorna un float
 def Getnum(msg: str) -> float:
-    return float(inquirer.number(message=msg).execute())
+    return float(
+        inquirer.number(message=msg, float_allowed=True, replace_mode=True).execute()
+    )
 
 
 sum = 0
