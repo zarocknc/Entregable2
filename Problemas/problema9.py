@@ -125,6 +125,9 @@ def comprar():
         textoRegalo = Text("Felicidades Ganaste un Poster!!")
         textoRegalo.stylize("bold red", 23, 29)
         console.print(textoRegalo)
+    textoPagar = Text("Sera redireccionado a Paypal en unos segundos...")
+    textoPagar.stylize("bold red", 22, 28)
+    console.print(textoPagar)
 
 
 comprar()
