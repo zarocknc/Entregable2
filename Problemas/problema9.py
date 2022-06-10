@@ -95,8 +95,9 @@ def comprar():
     precioTotal = 0
     for value in cestaPrecioFinal.values():
         precioTotal += value
+    precioTotal = round(precioTotal, 2)
 
-    print("el precio final es:", precioTotal)
+    print("el precio final es:", round(precioTotal, 2))
     #### Calculando regalos
     ## Cesta final (la cantidad comprada)
     regalo = False
