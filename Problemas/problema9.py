@@ -44,9 +44,10 @@ def comprar():
             return sys.exit("error: la cantidad es incorrecta")
 
     print("AQUI")
+    cestaPrecios = {}
     for key, value in cestaFinal.items():
         # print(precios.get(key))  # .get return el valor del item con el key especificado
-        cestaFinal[key] = value * precios.get(key)
+        cestaPrecios[key] = value * precios.get(key)
     print(cestaFinal)
 
     print("HERE")
