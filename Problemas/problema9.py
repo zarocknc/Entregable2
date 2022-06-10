@@ -43,7 +43,6 @@ def comprar():
         else:
             return sys.exit("error: la cantidad es incorrecta")
 
-    print("AQUI")
     cestaPrecios = {}
     for key, value in cestaFinal.items():
         # print(precios.get(key))  # .get return el valor del item con el key especificado
@@ -66,5 +65,17 @@ def comprar():
     print("este es el precio con el descuento")
     print(cestaPrecioFinal)
 
+    #### Calculando regalos
+    ## Cesta final (la cantidad comprada)
+    regalo = False
+
+    if cestaFinal.get("Pop") != None and cestaFinal.get("Pop") > 6:
+        regalo = True
+    elif cestaFinal.get("Rock") != None and cestaFinal.get("Rock") > 6:
+        regalo = True
+    print("Te regalamos un poster es", regalo)
+    ### Imprimimos los datos como corresponde
+
 
 comprar()
+## YA creo que todo esta completo | eso espero
