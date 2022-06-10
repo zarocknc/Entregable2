@@ -48,14 +48,23 @@ def comprar():
     for key, value in cestaFinal.items():
         # print(precios.get(key))  # .get return el valor del item con el key especificado
         cestaPrecios[key] = value * precios.get(key)
-    print(cestaFinal)
+    print("Cantidad de cesta", cestaFinal)
+    print("Precios ", precios)
+    print("Cesta Precios", cestaPrecios)
+    cestaDescuentos = dict()  # dict vacio
+    cestaPrecioFinal = dict()
+    for key, value in cestaFinal.items():
+        cestaDescuentos[key] = (
+            cestaPrecios.get(key) * descuentos(value) / 100
+        )  # cestaPrecios.get(key) retorna un None al declaralo como un dict vacio
+        cestaPrecioFinal[key] = round(
+            cestaPrecios.get(key) - cestaDescuentos.get(key), 2
+        )
 
-    print("HERE")
-    # for key, value in cestaFinal.items():
-    # precioDeCesta[key] = value - (value * descuentos(value) / 100)
-    # counterHelperDeCantidadDeDiscos = 0
-    # for value in cestaFinal():
-    # counterHelperDeCantidadDeDiscos += value
+        # Pero si retorna floats y por ende si funciona
+    print("cesta descuentos:", cestaDescuentos)
+    print("este es el precio con el descuento")
+    print(cestaPrecioFinal)
 
 
 comprar()
