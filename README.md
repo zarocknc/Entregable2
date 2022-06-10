@@ -6,3 +6,7 @@ Problemas Basicos en python
 pip install InquirerPy
 pip install rich
 ```
+
+### TODO:
+- Declarar dependencias properly
+- A requirements.txt
