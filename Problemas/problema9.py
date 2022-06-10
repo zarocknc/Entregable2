@@ -92,6 +92,11 @@ def comprar():
     # print("este es el precio con el descuento")
     # print(cestaPrecioFinal)
 
+    precioTotal = 0
+    for value in cestaPrecioFinal.values():
+        precioTotal += value
+
+    print("el precio final es:", precioTotal)
     #### Calculando regalos
     ## Cesta final (la cantidad comprada)
     regalo = False
@@ -111,10 +116,15 @@ def comprar():
             "S/" + str(cestaPrecioFinal.get(key)),
         )
     console.print(tablaResumen)
+
+    textoPrecioTotal = Text("El precio total es: " + "S/" + str(precioTotal))
+    textoPrecioTotal.stylize("bold magenta", 20)
+    console.print(textoPrecioTotal)
+
     if regalo:
-        texto = Text("Felicidades Ganaste un Poster!!")
-        texto.stylize("bold red", 23, 29)
-        console.print(texto)
+        textoRegalo = Text("Felicidades Ganaste un Poster!!")
+        textoRegalo.stylize("bold red", 23, 29)
+        console.print(textoRegalo)
 
 
 comprar()
